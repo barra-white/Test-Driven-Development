@@ -85,4 +85,21 @@ class ColourTableTest {
 
         assertThrows(IllegalStateException.class, () -> test.add(blue));
     }
+
+    @Test
+    // method to check functionality of contains method
+    void checkIfContains() {
+        ColourTable test = new ColourTable(2);
+        Colour red = new Colour(255, 0, 0);
+        Colour green = new Colour(0, 255, 0);
+        Colour blue = new Colour(0, 0, 255);
+
+        test.add(red);
+        test.add(green);
+
+        assertTrue(test.contains(red));
+        assertTrue(test.contains(green));
+        assertTrue(test.contains(new Colour(255,0 ,0)));
+        assertFalse(test.contains(blue));
+    }
 }

@@ -36,6 +36,16 @@ public class ColourTable {
         throw new IllegalStateException("There is no space in the colour palette to add another colour");
     }
 
+    // method to check if a colour is already contained in the palette
+    public boolean contains(Colour colour) {
+        for (int i = 0; i < this.getPaletteSize(); i++) {
+            if (this.getColourAtIndex(i).equals(colour)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // method to validate palette size
     public int validatePaletteSize(int size) {
         if (isPowerOf2(size) && size > 1 && size < 1025) {
