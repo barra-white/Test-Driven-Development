@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ColourTableTest {
 
     @Test
-    // check if object is not null after intialisation
+    // check if object is not null after initialisation
     void checkIfNull() {
         ColourTable testTable = new ColourTable(8);
         assertNotNull(testTable);
@@ -26,6 +26,12 @@ class ColourTableTest {
         assertThrows(IllegalArgumentException.class, () -> new ColourTable(0));
         assertThrows(IllegalArgumentException.class, () -> new ColourTable(10000));
         assertThrows(IllegalArgumentException.class, () -> new ColourTable(7));
+    }
+
+    @Test
+    // check if exception is thrown if colourTable is called without a palette size
+    void checkForPaletteSizeInput() {
+        assertThrows(IllegalArgumentException.class, () -> new ColourTable());
     }
 
 }

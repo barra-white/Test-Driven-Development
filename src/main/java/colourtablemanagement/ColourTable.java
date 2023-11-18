@@ -6,7 +6,12 @@ public class ColourTable {
 
     // constructor
     public ColourTable(int paletteSize) {
-        colourPalette = new Colour[this.validatePaletteSize(paletteSize)];
+        this.colourPalette = new Colour[this.validatePaletteSize(paletteSize)];
+    }
+
+    // constructor that throws exception if no size is specified
+    public ColourTable() {
+        throw new IllegalArgumentException("Must enter a palette size");
     }
 
     // getter method to return palette size
@@ -24,7 +29,7 @@ public class ColourTable {
         }
     }
 
-    // method to check if a value is to the power of 2
+    // method to check if a value is to the power of 2 (bitwise operation)
     public boolean isPowerOf2(int size) {
         return (size & (size - 1)) == 0;
     }
