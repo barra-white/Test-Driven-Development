@@ -13,6 +13,11 @@ public class Colour {
         this.blue = this.validateRange(blue);
     }
 
+    // default constructor throws error
+    public Colour() {
+        throw new IllegalArgumentException("Must input values for Red, Green and Blue");
+    }
+
     // get methods for each of the RGB values
     public int getRed() {
         return this.red;

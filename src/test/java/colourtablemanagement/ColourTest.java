@@ -51,4 +51,10 @@ public class ColourTest {
         assertFalse(red.equals(green));
         assertFalse(green_2.equals(red_2));
     }
+
+    @Test
+    // check if exception is thrown if no argument is called
+    void checkIfNoArgument() {
+        assertThrows(IllegalArgumentException.class, () -> new Colour());
+    }
 }
