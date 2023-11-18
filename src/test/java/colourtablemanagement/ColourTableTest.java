@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ColourTableTest {
     @Test
-    void thisIsATest() {
-
+        // check if object is null after construction
+    void checkIfNull() {
+        ColourTable testTable = new ColourTable(10);
+        assertNotNull(testTable);
     }
 }
