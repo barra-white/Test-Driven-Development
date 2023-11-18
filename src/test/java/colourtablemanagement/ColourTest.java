@@ -32,9 +32,23 @@ public class ColourTest {
         assertEquals(157, testColour.getBlue());
 
 
-        // check to see if exception is thrown as red is out of range
+        // check to see if exception is thrown if any rgb value is out of range
         assertThrows(IllegalArgumentException.class, () -> new Colour(256, 0, 0));
         assertThrows(IllegalArgumentException.class, () -> new Colour(0, -55, 0));
         assertThrows(IllegalArgumentException.class, () -> new Colour(0, 0, 1000));
+    }
+
+    @Test
+    // check if the equals method is functioning correctly
+    void checkIfEquals() {
+        Colour red = new Colour(255, 0, 0);
+        Colour green = new Colour(0, 255, 0);
+        Colour red_2 = new Colour(255, 0, 0);
+        Colour green_2 = new Colour(0, 255, 0);
+
+        assertTrue(red.equals(red_2));
+        assertTrue(green.equals(green_2));
+        assertFalse(red.equals(green));
+        assertFalse(green_2.equals(red_2));
     }
 }

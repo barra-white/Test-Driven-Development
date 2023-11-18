@@ -34,4 +34,9 @@ public class Colour {
             throw new IllegalArgumentException("RGB Values must be between 0 and 255");
         }
     }
+
+    // method to check if 2 colours are equal
+    public boolean equals(Colour other) {
+        return this.red == other.getRed() && this.green == other.getGreen() && this.blue == other.getBlue();
+    }
 }
