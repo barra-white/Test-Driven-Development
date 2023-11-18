@@ -50,4 +50,25 @@ class ColourTableTest {
         test.add(red);
         assertEquals(red, test.getColourAtIndex(0));
     }
+
+    @Test
+    // test to see if colours are only added at null indexes
+    void checkIfOnlyAddedAtNull() {
+        ColourTable test = new ColourTable(4);
+        Colour red = new Colour(255, 0, 0);
+        Colour green = new Colour(0, 255, 0);
+
+        assertNull(test.getColourAtIndex(0));
+        assertNull(test.getColourAtIndex(1));
+        assertNull(test.getColourAtIndex(2));
+        assertNull(test.getColourAtIndex(3));
+
+        test.add(red);
+        test.add(green);
+
+        assertEquals(red, test.getColourAtIndex(0));
+        assertEquals(green, test.getColourAtIndex(1));
+        assertNull(test.getColourAtIndex(2));
+        assertNull(test.getColourAtIndex(3));
+    }
 }

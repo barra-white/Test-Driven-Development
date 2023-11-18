@@ -26,7 +26,14 @@ public class ColourTable {
 
     // method to add colours to the palette
     public void add(Colour colour) {
-        this.colourPalette[0] = colour;
+        int index;
+        for (index = 0; index < this.getPaletteSize(); index++) {
+            if (this.getColourAtIndex(index) == null) {
+                this.colourPalette[index] = colour;
+                return;
+            }
+        }
+        throw new IllegalStateException("There is no space in the colour palette to add another colour");
     }
 
     // method to validate palette size
