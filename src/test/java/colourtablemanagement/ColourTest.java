@@ -20,4 +20,21 @@ public class ColourTest {
         assertEquals(59, testColour.getGreen());
         assertEquals(72, testColour.getBlue());
     }
+
+    @Test
+    // check if inputted values are in specified range
+    void checkIfInRange() {
+        Colour testColour = new Colour(155, 156, 157);
+
+        // checks to see if assigns correctly when values in range
+        assertEquals(155, testColour.getRed());
+        assertEquals(156, testColour.getGreen());
+        assertEquals(157, testColour.getBlue());
+
+
+        // check to see if exception is thrown as red is out of range
+        assertThrows(IllegalArgumentException.class, () -> new Colour(256, 0, 0));
+        assertThrows(IllegalArgumentException.class, () -> new Colour(0, -55, 0));
+        assertThrows(IllegalArgumentException.class, () -> new Colour(0, 0, 1000));
+    }
 }
