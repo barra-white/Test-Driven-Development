@@ -71,4 +71,18 @@ class ColourTableTest {
         assertNull(test.getColourAtIndex(2));
         assertNull(test.getColourAtIndex(3));
     }
+
+    @Test
+    // method to check if IllegalStateException is thrown if colour is added out of bound or there is no free space
+    void checkIfColourCanBeAdded() {
+        ColourTable test = new ColourTable(2);
+        Colour red = new Colour(255, 0, 0);
+        Colour green = new Colour(0, 255, 0);
+        Colour blue = new Colour(0, 0, 255);
+
+        test.add(red);
+        test.add(green);
+
+        assertThrows(IllegalStateException.class, () -> test.add(blue));
+    }
 }
