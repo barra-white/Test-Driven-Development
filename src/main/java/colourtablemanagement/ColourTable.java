@@ -33,4 +33,15 @@ public class ColourTable {
     public boolean isPowerOf2(int size) {
         return (size & (size - 1)) == 0;
     }
+
+    // method to count number of empty space in palette
+    public int getFreePaletteSpace() {
+        int spaceCounter = 0;
+        for (Colour col : colourPalette) {
+            if (col == null) {
+                spaceCounter++;
+            }
+        }
+        return spaceCounter;
+    }
 }

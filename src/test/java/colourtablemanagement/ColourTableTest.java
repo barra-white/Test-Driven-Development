@@ -34,4 +34,12 @@ class ColourTableTest {
         assertThrows(IllegalArgumentException.class, () -> new ColourTable());
     }
 
+    @Test
+    // test method to count number of empty spaces in colour palette
+    void checkForEmptyPaletteSpace () {
+        ColourTable test = new ColourTable(1024);
+        assertEquals(test.getPaletteSize(), test.getFreePaletteSpace());
+        assertEquals(1024, test.getFreePaletteSpace());
+    }
+
 }
