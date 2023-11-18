@@ -42,6 +42,9 @@ public class Colour {
 
     // method to check if 2 colours are equal
     public boolean equals(Colour other) {
+        if (other == null) {
+            return false;
+        }
         return this.red == other.getRed() && this.green == other.getGreen() && this.blue == other.getBlue();
     }
 }

@@ -28,6 +28,9 @@ public class ColourTable {
     public void add(Colour colour) {
         int index;
         for (index = 0; index < this.getPaletteSize(); index++) {
+            if (this.contains(colour)) {
+                throw new IllegalArgumentException("Colour is already in the palette");
+            }
             if (this.getColourAtIndex(index) == null) {
                 this.colourPalette[index] = colour;
                 return;
@@ -39,6 +42,9 @@ public class ColourTable {
     // method to check if a colour is already contained in the palette
     public boolean contains(Colour colour) {
         for (int i = 0; i < this.getPaletteSize(); i++) {
+            if (this.getColourAtIndex(i) == null) {
+                continue;
+            }
             if (this.getColourAtIndex(i).equals(colour)) {
                 return true;
             }

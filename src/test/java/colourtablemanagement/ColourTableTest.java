@@ -102,4 +102,18 @@ class ColourTableTest {
         assertTrue(test.contains(new Colour(255,0 ,0)));
         assertFalse(test.contains(blue));
     }
+
+    @Test
+    // method to check if colour is only added if not already in the palette
+    void onlyAddIfNotInPalette() {
+        ColourTable test = new ColourTable(2);
+        Colour red = new Colour(255, 0, 0);
+        Colour green = new Colour(0, 255, 0);
+
+        test.add(red);
+        assertThrows(IllegalArgumentException.class, () -> test.add(red));
+        assertTrue(test.contains(red));
+        test.add(green);
+        assertTrue(test.contains(green));
+    }
 }
