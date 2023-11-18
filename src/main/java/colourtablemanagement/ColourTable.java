@@ -19,6 +19,16 @@ public class ColourTable {
         return this.colourPalette.length;
     }
 
+    // get method to get a colour at specified index
+    public Colour getColourAtIndex(int index) {
+        return this.colourPalette[index];
+    }
+
+    // method to add colours to the palette
+    public void add(Colour colour) {
+        this.colourPalette[0] = colour;
+    }
+
     // method to validate palette size
     public int validatePaletteSize(int size) {
         if (isPowerOf2(size) && size > 1 && size < 1025) {

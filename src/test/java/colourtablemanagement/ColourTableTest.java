@@ -42,4 +42,12 @@ class ColourTableTest {
         assertEquals(1024, test.getFreePaletteSpace());
     }
 
+    @Test
+    // method to test if colour is being added
+    void checkIfColourAdded() {
+        ColourTable test = new ColourTable(2);
+        Colour red = new Colour(255, 0, 0);
+        test.add(red);
+        assertEquals(red, test.getColourAtIndex(0));
+    }
 }
