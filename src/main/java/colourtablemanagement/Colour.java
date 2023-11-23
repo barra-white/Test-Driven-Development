@@ -56,6 +56,6 @@ public class Colour {
                 "\n\tHEX= " + Integer.toHexString(this.getRed()) + " " +
                 Integer.toHexString(this.getGreen()) + " " +
                 Integer.toHexString(this.getBlue()) +
-                "\n}";
+                "\n}\n";
     }
 }
