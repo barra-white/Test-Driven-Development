@@ -6,14 +6,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ColourTest {
     @Test
-    // check if object is null after construction
+        // check if object is null after construction
     void checkIfNull() {
         Colour testColour = new Colour(255, 0, 0);
         assertNotNull(testColour);
     }
 
     @Test
-    // check if constructor is assigning values correctly
+        // check if constructor is assigning values correctly
     void checkIfCorrectValues() {
         Colour testColour = new Colour(147, 59, 72);
         assertEquals(147, testColour.getRed());
@@ -22,7 +22,7 @@ public class ColourTest {
     }
 
     @Test
-    // check if inputted values are in specified range
+        // check if inputted values are in specified range
     void checkIfInRange() {
         Colour testColour = new Colour(155, 156, 157);
 
@@ -39,7 +39,7 @@ public class ColourTest {
     }
 
     @Test
-    // check if the equals method is functioning correctly
+        // check if the equals method is functioning correctly
     void checkIfEquals() {
         Colour red = new Colour(255, 0, 0);
         Colour green = new Colour(0, 255, 0);
@@ -53,8 +53,15 @@ public class ColourTest {
     }
 
     @Test
-    // check if exception is thrown if no argument is called
+        // check if exception is thrown if no argument is called
     void checkIfNoArgument() {
         assertThrows(IllegalArgumentException.class, () -> new Colour());
+    }
+
+    @Test
+        // test to check the toString() method of my colour representation
+    void checkToStringRepresentation() {
+        Colour red = new Colour(255, 255, 0);
+        assertEquals("Colour {\n\tR= 255\n\tG= 255\n\tB= 0\n\tHEX= ffff0\n}", red.toString());
     }
 }

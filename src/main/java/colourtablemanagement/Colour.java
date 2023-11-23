@@ -47,4 +47,13 @@ public class Colour {
         }
         return this.red == other.getRed() && this.green == other.getGreen() && this.blue == other.getBlue();
     }
+
+    // method to represent colour as a string
+    public String toString() {
+        return "Colour {\n\tR= " + this.getRed() +
+                "\n\tG= " + this.getGreen() +
+                "\n\tB= " + this.getBlue() +
+                "\n\tHEX= " + Integer.toHexString(this.getRed()) + Integer.toHexString(this.getGreen()) + Integer.toHexString(this.getBlue()) +
+                "\n}";
+    }
 }
