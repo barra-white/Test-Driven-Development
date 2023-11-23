@@ -77,4 +77,24 @@ public class ColourTable {
         }
         return spaceCounter;
     }
+
+    // string representation of the colour palette
+    public String toString() {
+        StringBuilder palette = new StringBuilder();
+        palette.append("Colour Palette {\n\n");
+        palette.append("\tTotal Palette Size: ").append(this.getPaletteSize()).append("\n");
+        palette.append("\tNo. of Colours in Palette: ").append(this.getPaletteSize() - this.getFreePaletteSpace()).append("\n");
+        palette.append("\tFree Palette Space: ").append(this.getFreePaletteSpace()).append("\n");
+        palette.append("\tColours:\n");
+
+        for (int i = 0; i < this.getPaletteSize(); i++) {
+            if (this.getColourAtIndex(i) != null) {
+                String colourString = this.getColourAtIndex(i).toString(); // N.B. regex for tab at beginning of each line adapted from chatGPT
+                colourString = colourString.replaceAll("(?m)^", "\t\t"); // add a tab at the beginning of each line
+                palette.append(colourString); // append to string representation
+            }
+        }
+        palette.append("}");
+        return palette.toString(); // convert StringBuilder() to String + return
+    }
 }

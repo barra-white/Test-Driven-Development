@@ -116,4 +116,34 @@ class ColourTableTest {
         test.add(green);
         assertTrue(test.contains(green));
     }
+
+    @Test
+    // method to check if the toString() method of ColourTable is working properly
+    void checkToStringRepresentation() {
+        ColourTable test = new ColourTable(4);
+        Colour red = new Colour(255, 0, 0);
+        Colour green = new Colour(0, 255, 0);
+        test.add(red);
+        test.add(green);
+        assertEquals("""
+                Colour Palette {
+
+                \tTotal Palette Size: 4
+                \tNo. of Colours in Palette: 2
+                \tFree Palette Space: 2
+                \tColours:
+                \t\tColour {
+                \t\t\tR= 255
+                \t\t\tG= 0
+                \t\t\tB= 0
+                \t\t\tHEX= ff 0 0
+                \t\t}
+                \t\tColour {
+                \t\t\tR= 0
+                \t\t\tG= 255
+                \t\t\tB= 0
+                \t\t\tHEX= 0 ff 0
+                \t\t}
+                }""", test.toString());
+    }
 }
