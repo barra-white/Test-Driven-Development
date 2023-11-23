@@ -62,6 +62,6 @@ public class ColourTest {
         // test to check the toString() method of my colour representation
     void checkToStringRepresentation() {
         Colour red = new Colour(255, 255, 0);
-        assertEquals("Colour {\n\tR= 255\n\tG= 255\n\tB= 0\n\tHEX= ffff0\n}", red.toString());
+        assertEquals("Colour {\n\tR= 255\n\tG= 255\n\tB= 0\n\tHEX= ff ff 0\n}", red.toString());
     }
 }

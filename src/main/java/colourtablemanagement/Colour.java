@@ -53,7 +53,9 @@ public class Colour {
         return "Colour {\n\tR= " + this.getRed() +
                 "\n\tG= " + this.getGreen() +
                 "\n\tB= " + this.getBlue() +
-                "\n\tHEX= " + Integer.toHexString(this.getRed()) + Integer.toHexString(this.getGreen()) + Integer.toHexString(this.getBlue()) +
+                "\n\tHEX= " + Integer.toHexString(this.getRed()) + " " +
+                Integer.toHexString(this.getGreen()) + " " +
+                Integer.toHexString(this.getBlue()) +
                 "\n}";
     }
 }
